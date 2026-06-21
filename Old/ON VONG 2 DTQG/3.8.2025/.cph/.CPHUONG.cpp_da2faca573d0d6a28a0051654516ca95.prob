@@ -1,0 +1,1 @@
+{"name":"Local: CPHUONG","url":"/home/hoathang_34/PROJECTS/Code_Chill/3.8.2025/CPHUONG.cpp","tests":[{"id":1754217859700,"input":"53\n","output":"2 2 3 6"},{"id":1754217865358,"input":"9","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/Code_Chill/3.8.2025/CPHUONG.cpp","group":"local","local":true}

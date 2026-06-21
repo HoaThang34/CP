@@ -1,0 +1,1 @@
+{"name":"Local: TABLE24","url":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/TABLE24.cpp","tests":[{"id":1754308172341,"input":"2 3 3\n1 -2 3\n2 1 -1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/TABLE24.cpp","group":"local","local":true}

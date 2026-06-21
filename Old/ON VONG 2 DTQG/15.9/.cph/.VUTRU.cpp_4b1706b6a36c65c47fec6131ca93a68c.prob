@@ -1,0 +1,1 @@
+{"name":"Local: VUTRU","url":"/media/hoathang/GAMES/ /PROJECTS/DTQG/15.9/VUTRU.cpp","tests":[{"id":1757913027685,"input":"6 1\n3 0\n-3 1\n-5 0\n2 1\n6 3\n-4 5","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/hoathang/GAMES/ /PROJECTS/DTQG/15.9/VUTRU.cpp","group":"local","local":true}

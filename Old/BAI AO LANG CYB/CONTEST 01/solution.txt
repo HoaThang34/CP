@@ -1,0 +1,15 @@
+BAI 1
+- Tính chất của ước số chung: Nếu một số D là ước số chung của cả dãy số A1, A2, ..., An, thì D cũng phải là ước của Ước số chung lớn nhất (GCD) của dãy số đó.
+- Mục tiêu bài toán: Chúng ta cần tìm số D nhỏ nhất và D > 1.
+- Kết hợp: Từ hai điều trên, ta suy ra rằng: Ước số chung nhỏ nhất (lớn hơn 1) của cả dãy số chính là ước số nhỏ nhất (lớn hơn 1) của GCD của dãy số đó.
+
+
+BAI 2: quá dễ rồi =)))
+hint: đệ quy
+
+BAI 3: 2 con tro
+
+sắp xếp lại mảng a. Sau đó 2 con trỏ l = 1, r = n;
+Nếu a[l]+ a[r] <= x thì l++;r--
+ngược lại chỉ r--;
+mỗi lần xét l, r tăng biến đếm lên 1.

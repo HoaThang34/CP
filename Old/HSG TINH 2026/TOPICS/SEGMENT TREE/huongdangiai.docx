@@ -1,0 +1,241 @@
+# HƯỚNG DẪN GIẢI: BÀI TẬP ÁP DỤNG SEGMENT TREE
+
+---
+
+# BÀI 1: TÌM TỔNG ĐOẠN (SEGM1)
+
+## 1. Xác định bài toán
+
+- **Tên bài**: Tìm tổng đoạn (Range Sum Query).
+- **Input**:
+    - Dòng 1: $n$ ($1 \le n \le 10^5$).
+    - Dòng 2: Mảng $A$ gồm $n$ phần tử ($|A[i]| \le 10^9$).
+    - Dòng 3: $q$ ($1 \le q \le 10^5$).
+    - $q$ dòng tiếp theo:
+        - `1 i v`: Cập nhật $A[i] = v$.
+        - `2 l r`: Tính tổng các phần tử trong đoạn $[l, r]$.
+- **Output**: Với mỗi truy vấn loại 2, in ra tổng đoạn $[l, r]$.
+- **Ràng buộc**: $n, q \le 10^5$, giá trị có thể lên tới $10^9$, tổng có thể vượt quá $2^{31}-1$ nên cần dùng `long long`.
+
+## 2. Thuật toán
+
+Sử dụng cấu trúc dữ liệu **Segment Tree** (Cây phân đoạn) để quản lý mảng và thực hiện các truy vấn.
+
+- **Bước 1: Xây dựng cây (Build)**
+    - Mỗi nút của Segment Tree quản lý một đoạn $[L, R]$.
+    - Nút lá quản lý đoạn $[i, i]$ lưu giá trị $A[i]$.
+    - Nút cha quản lý đoạn $[L, R]$ sẽ lưu tổng của hai nút con (trái: $[L, \text{mid}]$, phải: $[\text{mid}+1, R]$).
+    - Độ phức tạp: $O(n)$.
+
+- **Bước 2: Cập nhật (Update)**
+    - Khi cập nhật $A[i] = v$, ta đi từ gốc xuống lá quản lý vị trí $i$.
+    - Cập nhật giá trị tại lá, sau đó quay lui (backtrack) để cập nhật lại tổng các nút cha bị ảnh hưởng.
+    - Độ phức tạp: $O(\log n)$.
+
+- **Bước 3: Truy vấn (Query)**
+    - Để tính tổng đoạn $[l, r]$, ta đi từ gốc.
+    - Nếu đoạn nút hiện tại nằm hoàn toàn trong $[l, r]$, trả về giá trị nút đó.
+    - Nếu không, chia bài toán xuống hai con và cộng kết quả lại.
+    - Độ phức tạp: $O(\log n)$.
+
+## 3. Đánh giá thuật toán
+
+- **Độ phức tạp thời gian**:
+    - Xây dựng: $O(n)$.
+    - Mỗi truy vấn: $O(\log n)$.
+    - Tổng cộng: $O(n + q \log n)$. Với $n, q = 10^5$, thuật toán chạy tốt trong giới hạn 1 giây (khoảng $2 \cdot 10^6$ phép tính).
+- **Độ phức tạp bộ nhớ**:
+    - Mảng Segment Tree cần kích thước $4n$. Với $n=10^5$, cần khoảng $400,000$ phần tử `long long`, tương đương ~3MB, rất nhỏ so với giới hạn bộ nhớ (thường là 256MB).
+
+## 4. Code mẫu C++
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+const int MAXN = 100005;
+long long st[4 * MAXN];
+int a[MAXN];
+int n, q;
+
+void build(int id, int l, int r) {
+    if (l == r) {
+        st[id] = a[l];
+        return;
+    }
+    int mid = (l + r) / 2;
+    build(2 * id, l, mid);
+    build(2 * id + 1, mid + 1, r);
+    st[id] = st[2 * id] + st[2 * id + 1];
+}
+
+void update(int id, int l, int r, int pos, int val) {
+    if (pos < l || pos > r) return;
+    if (l == r) {
+        st[id] = val;
+        return;
+    }
+    int mid = (l + r) / 2;
+    update(2 * id, l, mid, pos, val);
+    update(2 * id + 1, mid + 1, r, pos, val);
+    st[id] = st[2 * id] + st[2 * id + 1];
+}
+
+long long get(int id, int l, int r, int u, int v) {
+    if (v < l || u > r) return 0;
+    if (u <= l && r <= v) return st[id];
+    int mid = (l + r) / 2;
+    return get(2 * id, l, mid, u, v) + get(2 * id + 1, mid + 1, r, u, v);
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    if (fopen("SEGM1.inp", "r")) {
+        freopen("SEGM1.inp", "r", stdin);
+        freopen("SEGM1.out", "w", stdout);
+    }
+
+    cin >> n;
+    for (int i = 1; i <= n; ++i) cin >> a[i];
+    build(1, 1, n);
+
+    cin >> q;
+    while (q--) {
+        int type;
+        cin >> type;
+        if (type == 1) {
+            int i, v;
+            cin >> i >> v;
+            update(1, 1, n, i, v);
+        } else {
+            int l, r;
+            cin >> l >> r;
+            cout << get(1, 1, n, l, r) << "\n";
+        }
+    }
+    return 0;
+}
+```
+
+---
+
+# BÀI 2: TÌM MIN TRÊN ĐOẠN (SEGM2)
+
+## 1. Xác định bài toán
+
+- **Tên bài**: Tìm Min trên đoạn (Range Minimum Query - SEGM2).
+- **Input**:
+    - Dòng 1: $n$ ($1 \le n \le 10^5$).
+    - Dòng 2: Mảng $A$ gồm $n$ phần tử ($|A[i]| \le 10^9$).
+    - Dòng 3: $q$ ($1 \le q \le 10^5$).
+    - $q$ dòng tiếp theo:
+        - `1 i v`: Cập nhật $A[i] = v$.
+        - `2 L R`: Tìm giá trị nhỏ nhất trong đoạn $[L, R]$.
+- **Output**: Với mỗi truy vấn loại 2, in ra min đoạn $[L, R]$.
+- **Ràng buộc**: $n, q \le 10^5$, giá trị lớn nhất $10^9$.
+
+## 2. Thuật toán
+
+Sử dụng **Segment Tree** để tìm giá trị nhỏ nhất (Minimum) trên đoạn.
+
+- **Bước 1: Xây dựng (Build)**
+    - Mỗi nút quản lý đoạn $[L, R]$.
+    - Giá trị của nút là $\min(\text{con trái}, \text{con phải})$.
+    - Nút lá $A[i]$.
+
+- **Bước 2: Cập nhật (Update)**
+    - Đi từ gốc xuống lá, cập nhật giá trị.
+    - Backtrack lên cập nhật lại Min các nút cha.
+
+- **Bước 3: Truy vấn (Query)**
+    - Tương tự bài toán tổng, nhưng thay phép cộng bằng phép lấy Min.
+    - Giá trị mặc định khi nằm ngoài đoạn truy vấn là $+\infty$ (Infinity).
+
+## 3. Đánh giá thuật toán
+
+- **Thời gian**: $O(n)$ dựng cây, $O(\log n)$ mỗi truy vấn. Tổng $O((n+q)\log n)$.
+- **Bộ nhớ**: $4n$ phần tử, rất nhẹ.
+
+## 4. Code mẫu C++
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MAXN = 100005;
+const int INF = 2e9 + 7;
+int st[4 * MAXN];
+int a[MAXN];
+int n, q;
+
+void build(int id, int l, int r) {
+    if (l == r) {
+        st[id] = a[l];
+        return;
+    }
+    int mid = (l + r) / 2;
+    build(2 * id, l, mid);
+    build(2 * id + 1, mid + 1, r);
+    st[id] = min(st[2 * id], st[2 * id + 1]);
+}
+
+void update(int id, int l, int r, int pos, int val) {
+    if (pos < l || pos > r) return;
+    if (l == r) {
+        st[id] = val;
+        return;
+    }
+    int mid = (l + r) / 2;
+    update(2 * id, l, mid, pos, val);
+    update(2 * id + 1, mid + 1, r, pos, val);
+    st[id] = min(st[2 * id], st[2 * id + 1]);
+}
+
+int get(int id, int l, int r, int u, int v) {
+    if (v < l || u > r) return INF;
+    if (u <= l && r <= v) return st[id];
+    int mid = (l + r) / 2;
+    return min(get(2 * id, l, mid, u, v), get(2 * id + 1, mid + 1, r, u, v));
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    if (fopen("SEGM2.inp", "r")) {
+        freopen("SEGM2.inp", "r", stdin);
+        freopen("SEGM2.out", "w", stdout);
+    }
+
+    cin >> n;
+    for (int i = 1; i <= n; ++i) cin >> a[i];
+    build(1, 1, n);
+
+    cin >> q;
+    while (q--) {
+        int type;
+        cin >> type;
+        if (type == 1) {
+            int i, v;
+            cin >> i >> v;
+            update(1, 1, n, i, v);
+        } else {
+            int l, r;
+            cin >> l >> r;
+            cout << get(1, 1, n, l, r) << "\n";
+        }
+    }
+    return 0;
+}
+```
+
+---
+
+**HẾT**

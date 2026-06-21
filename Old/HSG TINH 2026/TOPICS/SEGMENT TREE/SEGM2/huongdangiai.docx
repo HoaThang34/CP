@@ -1,0 +1,112 @@
+# HƯỚNG DẪN GIẢI: TÌM MIN TRÊN ĐOẠN (SEGM2)
+
+## 1. Xác định bài toán
+
+- **Tên bài**: Tìm Min trên đoạn (Range Minimum Query - SEGM2).
+- **Input**:
+    - Dòng 1: $n$ ($1 \le n \le 10^5$).
+    - Dòng 2: Mảng $A$ gồm $n$ phần tử ($|A[i]| \le 10^9$).
+    - Dòng 3: $q$ ($1 \le q \le 10^5$, lưu ý định dạng input theo ví dụ mẫu).
+    - $q$ dòng tiếp theo:
+        - `1 i v`: Cập nhật $A[i] = v$.
+        - `2 L R`: Tìm giá trị nhỏ nhất trong đoạn $[L, R]$.
+- **Output**: Với mỗi truy vấn loại 2, in ra min đoạn $[L, R]$.
+- **Ràng buộc**: $n, q \le 10^5$, giá trị lớn nhất $10^9$.
+
+## 2. Thuật toán
+
+Sử dụng **Segment Tree** để tìm giá trị nhỏ nhất (Minimum) trên đoạn.
+
+- **Bước 1: Xây dựng (Build)**
+    - Mỗi nút quản lý đoạn $[L, R]$.
+    - Giá trị của nút là $\min(\text{con trái}, \text{con phải})$.
+    - Nút lá $A[i]$.
+
+- **Bước 2: Cập nhật (Update)**
+    - Đi từ gốc xuống lá, cập nhật giá trị.
+    - Backtrack lên cập nhật lại Min các nút cha.
+
+- **Bước 3: Truy vấn (Query)**
+    - Tương tự bài toán tổng, nhưng thay phép cộng bằng phép lấy Min.
+    - Giá trị mặc định khi nằm ngoài đoạn truy vấn là $+\infty$ (Infinity).
+
+## 3. Đánh giá thuật toán
+
+- **Thời gian**: $O(n)$ dựng cây, $O(\log n)$ mỗi truy vấn. Tổng $O((n+q)\log n)$.
+- **Bộ nhớ**: $4n$ phần tử, rất nhẹ.
+
+## 4. Code mẫu C++
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+const int MAXN = 100005;
+const int INF = 2e9 + 7;
+int st[4 * MAXN];
+int a[MAXN];
+int n, q;
+
+void build(int id, int l, int r) {
+    if (l == r) {
+        st[id] = a[l];
+        return;
+    }
+    int mid = (l + r) / 2;
+    build(2 * id, l, mid);
+    build(2 * id + 1, mid + 1, r);
+    st[id] = min(st[2 * id], st[2 * id + 1]);
+}
+
+void update(int id, int l, int r, int pos, int val) {
+    if (pos < l || pos > r) return;
+    if (l == r) {
+        st[id] = val;
+        return;
+    }
+    int mid = (l + r) / 2;
+    update(2 * id, l, mid, pos, val);
+    update(2 * id + 1, mid + 1, r, pos, val);
+    st[id] = min(st[2 * id], st[2 * id + 1]);
+}
+
+int get(int id, int l, int r, int u, int v) {
+    if (v < l || u > r) return INF;
+    if (u <= l && r <= v) return st[id];
+    int mid = (l + r) / 2;
+    return min(get(2 * id, l, mid, u, v), get(2 * id + 1, mid + 1, r, u, v));
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    if (fopen("SEGM2.inp", "r")) {
+        freopen("SEGM2.inp", "r", stdin);
+        freopen("SEGM2.out", "w", stdout);
+    }
+
+    cin >> n;
+    for (int i = 1; i <= n; ++i) cin >> a[i];
+    build(1, 1, n);
+
+    cin >> q;
+    while (q--) {
+        int type;
+        cin >> type;
+        if (type == 1) {
+            int i, v;
+            cin >> i >> v;
+            update(1, 1, n, i, v);
+        } else {
+            int l, r;
+            cin >> l >> r;
+            cout << get(1, 1, n, l, r) << "\n";
+        }
+    }
+    return 0;
+}
+```

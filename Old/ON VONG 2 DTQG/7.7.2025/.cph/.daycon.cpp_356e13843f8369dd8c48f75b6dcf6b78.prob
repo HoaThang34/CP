@@ -1,0 +1,1 @@
+{"name":"Local: daycon","url":"d:\\Projects\\7.7.2025\\daycon.cpp","tests":[{"id":1751873512654,"input":"6 10\n1 2 7 10 15 5\n","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\7.7.2025\\daycon.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: ntcungnhau","url":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/ntcungnhau.cpp","tests":[{"id":1757611445263,"input":"3 12\n6 1 5","output":"3\n1\n7\n11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/ntcungnhau.cpp","group":"local","local":true}

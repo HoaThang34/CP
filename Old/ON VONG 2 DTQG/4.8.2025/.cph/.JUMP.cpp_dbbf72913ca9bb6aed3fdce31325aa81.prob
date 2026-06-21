@@ -1,0 +1,1 @@
+{"name":"Local: JUMP","url":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/JUMP.cpp","tests":[{"id":1754272242079,"input":"6 3\n4 3 7 2 6 4","output":"3"},{"id":1754305013626,"input":"6 1000\n4 3 7 2 6 4","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/JUMP.cpp","group":"local","local":true}

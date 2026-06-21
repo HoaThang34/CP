@@ -1,0 +1,1 @@
+{"name":"Local: MM","url":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/MM.cpp","tests":[{"id":1757556365380,"input":"3\n2 4 5","output":"1"},{"id":1757556692643,"input":"2\n5 7","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/MM.cpp","group":"local","local":true}

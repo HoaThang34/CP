@@ -1,0 +1,1 @@
+{"name":"Local: ROOM","url":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ROOM.cpp","tests":[{"id":1754037447059,"input":"3 5\n5 6 9\n2 9 17 6 2\n","output":"9\n1 2 4\n"},{"id":1754037596564,"input":"3 5\n15 6 11\n2 9 17 6 2\n","output":"11\n3 4 5\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ROOM.cpp","group":"local","local":true}

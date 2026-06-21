@@ -1,0 +1,1 @@
+{"name":"Local: door","url":"d:\\Projects\\9.7.2025\\door.cpp","tests":[{"id":1752030969467,"input":"5 3\n1 3 2 1 1","output":"5"},{"id":1752032610209,"input":"5 10\n1 9 8 2 1\n","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\9.7.2025\\door.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: TELEFONI","url":"/home/hoathang_34/PROJECTS/DTQG_T8_2025/11.8/TELEFONI.cpp","tests":[{"id":1754879045388,"input":"9 3 \n1 0 0 1 1 0 0 0 1","output":"1"},{"id":1754879942318,"input":"4 1\n1 0 1 1","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/DTQG_T8_2025/11.8/TELEFONI.cpp","group":"local","local":true}

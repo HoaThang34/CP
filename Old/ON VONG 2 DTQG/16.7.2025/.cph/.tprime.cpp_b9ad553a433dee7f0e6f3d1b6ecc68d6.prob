@@ -1,0 +1,1 @@
+{"name":"Local: tprime","url":"f:\\Code_Chill\\16.7.2025\\tprime.cpp","tests":[{"id":1752651215273,"input":"4 2\n9 5 8 15","output":""},{"id":1752651641573,"input":"4 2\n2 3 5 7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\16.7.2025\\tprime.cpp","group":"local","local":true}

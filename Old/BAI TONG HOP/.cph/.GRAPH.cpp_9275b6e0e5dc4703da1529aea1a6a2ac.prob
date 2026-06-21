@@ -1,0 +1,1 @@
+{"name":"Local: GRAPH","url":"f:\\hoathanglamlai\\GRAPH.cpp","tests":[{"id":1761457295559,"input":"3 3\n2 3\n1 2\n1 3 ","output":"3.333"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\hoathanglamlai\\GRAPH.cpp","group":"local","local":true}

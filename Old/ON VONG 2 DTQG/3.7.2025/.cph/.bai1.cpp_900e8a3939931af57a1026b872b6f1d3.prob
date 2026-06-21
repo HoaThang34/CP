@@ -1,0 +1,1 @@
+{"name":"Local: bai1","url":"d:\\Projects\\3.7\\bai1.cpp","tests":[{"id":1751507485403,"input":"1002","output":"2100"},{"id":1751507490109,"input":"12498567859","output":"-1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\3.7\\bai1.cpp","group":"local","local":true}

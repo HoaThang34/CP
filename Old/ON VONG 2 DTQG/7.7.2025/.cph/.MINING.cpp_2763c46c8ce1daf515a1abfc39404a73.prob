@@ -1,0 +1,1 @@
+{"name":"Local: MINING","url":"d:\\Projects\\7.7.2025\\MINING.cpp","tests":[{"id":1751881215575,"input":"4  3\n5  3  7  8\n","output":"6\n"},{"id":1751881233655,"input":"4  10\n5  3  7  8\n","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\7.7.2025\\MINING.cpp","group":"local","local":true}

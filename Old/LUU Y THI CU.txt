@@ -1,0 +1,10 @@
+1. Check tên biến có trùng nhau hay không?
+2. Check lại hàm cơ bản có sai không?
+3. Hàm sàng nguyên tố cẩn thận, nguy cơ cao sẽ for từ 1,...)
+4. resize() nhé
+5. check kĩ tên bài
+6. check kĩ test đề bài
+7. đồ thị nhập vào phải for đến m.
+8. luôn luôn chia sub code trâu.
+9. Sàng nguyên tố cấm quên gọi sàng.
+10 Không bao giờ được quên gọi hàm.

@@ -1,0 +1,1 @@
+{"name":"Local: SEQGAME","url":"f:\\Code_Chill\\18.7.2025_Chieu\\SEQGAME.cpp","tests":[{"id":1752824643588,"input":"2\n1 -2\n2 3\n","output":"0\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\18.7.2025_Chieu\\SEQGAME.cpp","group":"local","local":true}

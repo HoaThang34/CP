@@ -1,0 +1,1 @@
+{"name":"Local: ESTPROG","url":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ESTPROG.cpp","tests":[{"id":1754039650138,"input":"5 5\n1 3 2 4 5\n1 4\n3 5\n1 5\n2 4\n3 3\n","output":"3\r\n5\r\n4\r\n2\r\n0\r\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ESTPROG.cpp","group":"local","local":true}

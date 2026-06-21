@@ -1,0 +1,1 @@
+{"name":"Local: CHUSO","url":"/home/hoathang_34/PROJECTS/Code_Chill/5.8.2025(2)/CHUSO.cpp","tests":[{"id":1754393081667,"input":"345\n2 10","output":"5"},{"id":1754393787499,"input":"345\n2 12","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/Code_Chill/5.8.2025(2)/CHUSO.cpp","group":"local","local":true}

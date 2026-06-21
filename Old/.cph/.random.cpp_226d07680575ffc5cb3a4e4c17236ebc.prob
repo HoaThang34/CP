@@ -1,0 +1,1 @@
+{"name":"Local: random","url":"/run/user/1000/gvfs/onedrive:host=hotmail.com,user=hoathang34.09/OneDrive/Code_C++/random.cpp","tests":[{"id":1765121536429,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/run/user/1000/gvfs/onedrive:host=hotmail.com,user=hoathang34.09/OneDrive/Code_C++/random.cpp","group":"local","local":true}

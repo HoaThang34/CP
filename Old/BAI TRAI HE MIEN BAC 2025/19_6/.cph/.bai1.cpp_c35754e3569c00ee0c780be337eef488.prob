@@ -1,0 +1,1 @@
+{"name":"Local: bai1","url":"d:\\Projects\\traihe_2025\\19_6\\bai1.cpp","tests":[{"id":1750293848304,"input":"4 3\n1 4 3 6\n11 2 4 21","output":"6"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Projects\\traihe_2025\\19_6\\bai1.cpp","group":"local","local":true}

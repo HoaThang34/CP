@@ -1,0 +1,1 @@
+{"name":"Local: FIBO","url":"f:\\Code_Chill\\14.7.2025\\FIBO.cpp","tests":[{"id":1752542098014,"input":"5 2\n1 2 3 4 5","output":""},{"id":1752542108385,"input":"9 2\n1 2 3 1 4 5 2 11 7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\14.7.2025\\FIBO.cpp","group":"local","local":true}

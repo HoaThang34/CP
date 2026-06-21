@@ -1,0 +1,1 @@
+{"name":"Local: sol","url":"c:\\Users\\Admin\\OneDrive\\Code_C++\\sol.cpp","tests":[{"id":1762506317605,"input":"5 3\n2 4 7 3 5\n","output":"8\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Admin\\OneDrive\\Code_C++\\sol.cpp","group":"local","local":true}

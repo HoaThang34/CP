@@ -1,0 +1,1 @@
+{"name":"Local: MATCH","url":"f:\\CSP_Marathon_2025\\DAY2\\MATCH.cpp","tests":[{"id":1752292127057,"input":"5 3 3\n1 3 2 2 3\n1 2 3\n1 5\n2 5\n1 3","output":"YES\r\nNO\r\nNO\r\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\CSP_Marathon_2025\\DAY2\\MATCH.cpp","group":"local","local":true}

@@ -1,0 +1,127 @@
+/*
+    author: hoaquangthang
+    Solution: Square Root Decomposition (Chia căn)
+    Complexity: O(Q * sqrt(N) * log(sqrt(N)))
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define nap "SEGM3"
+
+const int MAXN = 100005;
+const int BLOCK_SIZE = 400; // tuned for N=10^5. sqrt(100000) ~ 316. 
+// larger block size makes update slower but query faster (fewer blocks to BS).
+// update: O(B), query: O(N/B * logB + B).
+// B=400: Update ~400. Query ~ 250*9 + 400 ~ 2650.
+
+int n, q;
+int a[MAXN];
+vector<int> blocks[MAXN / BLOCK_SIZE + 5];
+
+int get_block_id(int idx) {
+    return (idx - 1) / BLOCK_SIZE;
+}
+
+void build() {
+    for (int i = 1; i <= n; i++) {
+        blocks[get_block_id(i)].push_back(a[i]);
+    }
+    for (int i = 0; i <= get_block_id(n); i++) {
+        sort(blocks[i].begin(), blocks[i].end());
+    }
+}
+
+void update(int idx, int val) {
+    int b_id = get_block_id(idx);
+    int old_val = a[idx];
+    
+    // Remove old_val from block
+    // Using lower_bound to find it.
+    auto it = lower_bound(blocks[b_id].begin(), blocks[b_id].end(), old_val);
+    // Note: there might be multiple same values, we just remove one.
+    // Since we maintain the invariant that blocks[...] contains values of a[...] in that range.
+    *it = val; // Optimization: Just replace and re-sort?
+    // Replacing one element and resorting is O(B log B).
+    // Erase and Insert is O(B).
+    // O(B) is better.
+    // Actually, simple strategy: remove old, perform O(B) shift. Find pos for new, perform O(B) shift.
+    
+    // To implement O(B) cleanly with vector:
+    // 1. Remove old_val
+    // 2. Insert val
+    // But since we found 'it', we can just remove it.
+    blocks[b_id].erase(it);
+    
+    // Insert new val
+    auto it2 = upper_bound(blocks[b_id].begin(), blocks[b_id].end(), val);
+    blocks[b_id].insert(it2, val);
+    
+    a[idx] = val;
+}
+
+int query(int l, int r, int x) {
+    int sum = 0;
+    int bl = get_block_id(l);
+    int br = get_block_id(r);
+    
+    if (bl == br) {
+        for (int i = l; i <= r; i++) {
+            if (a[i] > x) sum++;
+        }
+    } else {
+        // Left partial
+        for (int i = l; i <= (bl + 1) * BLOCK_SIZE; i++) {
+            if (a[i] > x) sum++;
+        }
+        
+        // Right partial
+        for (int i = br * BLOCK_SIZE + 1; i <= r; i++) {
+            if (a[i] > x) sum++;
+        }
+        
+        // Middle blocks
+        for (int b = bl + 1; b < br; b++) {
+            // Count elements > x
+            // vector is sorted. Use upper_bound.
+            // upper_bound returns first element > x.
+            // Wait, upper_bound returns first element > x.
+            // Indices from it to end are > x.
+            auto it = upper_bound(blocks[b].begin(), blocks[b].end(), x);
+            sum += (blocks[b].end() - it);
+        }
+    }
+    return sum;
+}
+
+void hoathang(){
+    if(!(cin >> n)) return;
+    for (int i = 1; i <= n; i++) cin >> a[i];
+    
+    build();
+    
+    cin >> q;
+    while(q--){
+        int type;
+        cin >> type;
+        if (type == 1) {
+            int i, v;
+            cin >> i >> v;
+            update(i, v);
+        } else {
+            int l, r, x;
+            cin >> l >> r >> x;
+            cout << query(l, r, x) << endl;
+        }
+    }
+}
+
+signed main(){
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    if (fopen(nap".inp", "r")){
+        freopen(nap".inp", "r", stdin);
+        freopen(nap".out", "w", stdout);
+    }
+    hoathang();
+    return 0;
+}

@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"f:\\Contest_Thay_Hieu\\LCA\\B. Tổ kiến.cpp","tests":[{"id":1754065274934,"input":"6\n0 8\n1 7\n1 9\n0 3\n4 2\n4\n2 3\n5 2\n1 4\n0 3\n2\n0 1\n2\n0 1\n1 0\n0\n","output":"16 20 11 17 \n1 1 \n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Contest_Thay_Hieu\\LCA\\B. Tổ kiến.cpp","group":"local","local":true}

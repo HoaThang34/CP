@@ -1,0 +1,1 @@
+{"name":"Local: MEDIAN","url":"f:\\Code_Chill\\2.8.2025\\MEDIAN.cpp","tests":[{"id":1754121441412,"input":"8 3 \n2 4 3 5 8 1 2 1","output":"3 4 5 5 2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\2.8.2025\\MEDIAN.cpp","group":"local","local":true}

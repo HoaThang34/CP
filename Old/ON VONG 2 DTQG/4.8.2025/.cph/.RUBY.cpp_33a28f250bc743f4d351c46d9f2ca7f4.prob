@@ -1,0 +1,1 @@
+{"name":"Local: RUBY","url":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/RUBY.cpp","tests":[{"id":1754276076856,"input":"8\n1 2 1 3 2 7 4 2\n","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/Code_Chill/4.8.2025/RUBY.cpp","group":"local","local":true}

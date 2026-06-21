@@ -1,0 +1,1 @@
+{"name":"Local: ENCNUM","url":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ENCNUM.cpp","tests":[{"id":1754043955327,"input":"2\n0 1 0 0 0 0 0 0 0 0\n","output":"19"},{"id":1754043978962,"input":"3\n1 0 0 0 0 1 0 0 0 0\n","output":"36"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Code_Chill\\1.8.2025_LAM_DE\\ENCNUM.cpp","group":"local","local":true}

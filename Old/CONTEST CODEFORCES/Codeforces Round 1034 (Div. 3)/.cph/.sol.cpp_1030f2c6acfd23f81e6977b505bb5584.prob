@@ -1,0 +1,1 @@
+{"name":"Local: sol","url":"f:\\Codeforces Round 1034 (Div. 3)\\sol.cpp","tests":[{"id":1760762164729,"input":"8 2\n7 6 6 2 9 6 2 7\n","output":"6 6 2 2 6 2 2\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\Codeforces Round 1034 (Div. 3)\\sol.cpp","group":"local","local":true}

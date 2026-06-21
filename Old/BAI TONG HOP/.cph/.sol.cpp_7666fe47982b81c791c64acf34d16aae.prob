@@ -1,0 +1,1 @@
+{"name":"Local: sol","url":"f:\\hoathanglamlai\\sol.cpp","tests":[{"id":1761620993975,"input":"5 3\n1 1 2 3 5\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"f:\\hoathanglamlai\\sol.cpp","group":"local","local":true}

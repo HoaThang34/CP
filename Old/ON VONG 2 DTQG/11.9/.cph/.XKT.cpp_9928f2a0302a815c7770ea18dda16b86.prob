@@ -1,0 +1,1 @@
+{"name":"Local: XKT","url":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/XKT.cpp","tests":[{"id":1757574839982,"input":"5\na\nabcdjdcecba\nabbaxyzyx\ncodeisfun\nacbba","output":"1\n9\n1\n5\n1\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/media/hoathang/GAMES/PROJECTS/DTQG/11.9/XKT.cpp","group":"local","local":true}

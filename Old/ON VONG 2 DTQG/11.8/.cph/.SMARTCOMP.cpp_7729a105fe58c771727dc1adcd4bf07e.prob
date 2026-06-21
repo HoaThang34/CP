@@ -1,0 +1,1 @@
+{"name":"Local: SMARTCOMP","url":"/home/hoathang_34/PROJECTS/DTQG_T8_2025/11.8/SMARTCOMP.cpp","tests":[{"id":1754877547050,"input":"2 10\n2 2 3 3 \n2 2 4 5\n2 2 5 8\n2 2 6 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hoathang_34/PROJECTS/DTQG_T8_2025/11.8/SMARTCOMP.cpp","group":"local","local":true}
