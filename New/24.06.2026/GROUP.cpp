@@ -28,8 +28,8 @@ void hoathang(){
         s += c[i];
     }
     int rmax = s;
-    int pos = 1;
-    for (int i = 2; i + k - 1 <= n; i++){
+    int pos = 0;
+    for (int i = 1; i + k - 1 <= n; i++){
         s = s - b[i - 1] + b[i + k - 1];
         if (s > rmax){
             rmax = s;
