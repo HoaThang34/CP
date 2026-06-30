@@ -8,22 +8,25 @@ using namespace std;
 #define nap ""
 #define endl '\n'
 #define int long long
-int n, k;
+int n;
 vector<int> a;
 
 void hoathang(){
-    cin >> n>> k;
+    cin >> n;
     a.resize(n + 5);
     for (int i = 1; i <= n; i++){
         cin >> a[i];
     }
-    sort(a.begin() + 1, a.begin() + 1+ n);
-    int l = 1, ans = 0;
+    int l = 1;
+    int ans = 0;
+    map<int,int> cnt;
     for (int r = 1; r <= n; r++){
-        while (a[r] - a[l] > k){
+        cnt[a[r]]++;
+        while(cnt[a[r]] > 1){
+            cnt[a[l]]--;
             l++;
         }
-        ans = max(ans, r - l + 1);
+        ans += r - l + 1;
     }
     cout << ans << endl;
 }
